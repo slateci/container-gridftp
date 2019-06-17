@@ -337,7 +337,7 @@ cat /opt/gridftp/users/etc-passwd | while read var1; do
     arrayEtcPasswd=($etcPasswd)
     groupadd -f -g ${arrayEtcPasswd[3]} ${arrayEtcPasswd[0]}
     useradd ${arrayEtcPasswd[0]} -p ${arrayEtcPasswd[1]} -u ${arrayEtcPasswd[2]} -g ${arrayEtcPasswd[3]} -c "${arrayEtcPasswd[4]}" -d ${arrayEtcPasswd[6]} -s ${arrayEtcPasswd[7]} 
-    mkdir -p /home/${arrayEtcPasswd[0]}
+    mkdir -p ${arrayEtcPasswd[6]} 
     chown "${arrayEtcPasswd[0]}:${arrayEtcPasswd[0]}" "/home/${arrayEtcPasswd[0]}"
 done
 eval $globusGridFTPString
